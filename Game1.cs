@@ -9,7 +9,7 @@ public class Game1 : Game
     private GraphicsDeviceManager _graphics;
     private SpriteBatch _spriteBatch;
     Texture2D shipTexture;
-    Player ship;
+    Player player;
 
     public Game1()
     {
@@ -31,7 +31,7 @@ public class Game1 : Game
         _spriteBatch = new SpriteBatch(GraphicsDevice);
 
         shipTexture = Content.Load<Texture2D>("Ship");
-        ship = new Player(shipTexture, Vector2.Zero);
+        player = new Player(shipTexture, Vector2.Zero);
         // TODO: use this.Content to load your game content here
     }
 
@@ -39,18 +39,17 @@ public class Game1 : Game
     {
         if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
             Exit();
-
         // TODO: Add your update logic here
-
+        
+        player.Update();
         base.Update(gameTime);
     }
 
     protected override void Draw(GameTime gameTime)
     {
         GraphicsDevice.Clear(Color.Black);
-
         _spriteBatch.Begin();
-        ship.Draw(_spriteBatch);
+        player.Draw(_spriteBatch);
         _spriteBatch.End();
 
         // TODO: Add your drawing code here

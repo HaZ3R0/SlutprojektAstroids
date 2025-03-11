@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <SourceFile>C:/webb/SlutprojektAstroids/Content/Ship.png</SourceFile>
-  <SourceTime>2025-03-06T12:54:41.7422088+01:00</SourceTime>
+  <SourceTime>2025-03-11T15:11:49.7538142+01:00</SourceTime>
   <DestFile>C:/webb/SlutprojektAstroids/Content/bin/Windows/Content/Ship.xnb</DestFile>
-  <DestTime>2025-03-06T13:10:09.9690734+01:00</DestTime>
+  <DestTime>2025-03-11T15:14:31.8693829+01:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2022-07-26T13:44:56+02:00</ImporterTime>
   <Processor>TextureProcessor</Processor>

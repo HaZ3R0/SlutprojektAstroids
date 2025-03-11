@@ -36,3 +36,4 @@ C:\webb\SlutprojektAstroids\obj\Debug\net6.0-windows\refint\SlutprojektAstroids.
 C:\webb\SlutprojektAstroids\obj\Debug\net6.0-windows\SlutprojektAstroids.pdb
 C:\webb\SlutprojektAstroids\obj\Debug\net6.0-windows\SlutprojektAstroids.genruntimeconfig.cache
 C:\webb\SlutprojektAstroids\obj\Debug\net6.0-windows\ref\SlutprojektAstroids.dll
+C:\webb\SlutprojektAstroids\obj\Debug\net6.0-windows\SlutprojektAstroids.sourcelink.json
