@@ -31,7 +31,7 @@ public class Game1 : Game
         _spriteBatch = new SpriteBatch(GraphicsDevice);
 
         shipTexture = Content.Load<Texture2D>("Ship");
-        player = new Player(shipTexture, Vector2.Zero);
+        player = new Player(shipTexture, new Vector2(400,240));
         // TODO: use this.Content to load your game content here
     }
 
