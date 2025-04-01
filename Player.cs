@@ -1,5 +1,7 @@
 using System;
+using System.Collections.Generic;
 using System.Diagnostics;
+using System.Xml;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
@@ -11,8 +13,11 @@ namespace SlutprojektAstroids
         private Texture2D texture;
         private Vector2 position;
         private float rotation;
-        Vector2 velocity = Vector2.Zero;
-        Rectangle hitbox = new Rectangle();        
+        private Vector2 velocity = Vector2.Zero;
+        private Rectangle hitbox = new Rectangle();
+        
+        private List<Bullet> bullets;
+        private Texture2D bulletTexture;
         
         public Player (Texture2D texture, Vector2 position){
             this.texture = texture;
@@ -50,6 +55,14 @@ namespace SlutprojektAstroids
             , new Vector2 (texture.Width /2, texture.Height / 2)
             , SpriteEffects.None
             , 0);
+        }
+
+        private void Shoot(){
+            KeyboardState kstate = Keyboard.GetState();
+
+            if (kstate.IsKeyDown(Keys.Space)){
+                bullets.Add(new Bullet(bulletTexture, position, velocity));
+            }
         }
     }
 }
