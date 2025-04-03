@@ -9,6 +9,7 @@ public class Game1 : Game
     private GraphicsDeviceManager _graphics;
     private SpriteBatch _spriteBatch;
     Texture2D shipTexture;
+    Texture2D bulletTexture;
     Player player;
 
     public Game1()
@@ -16,7 +17,7 @@ public class Game1 : Game
         _graphics = new GraphicsDeviceManager(this);
         Content.RootDirectory = "Content";
         IsMouseVisible = true;
-
+        _graphics.ToggleFullScreen();
     }
 
     protected override void Initialize()
@@ -31,7 +32,9 @@ public class Game1 : Game
         _spriteBatch = new SpriteBatch(GraphicsDevice);
 
         shipTexture = Content.Load<Texture2D>("Ship");
-        player = new Player(shipTexture, new Vector2(400,240));
+        bulletTexture = new Texture2D(GraphicsDevice, 1,1);
+        bulletTexture.SetData(new Color[]{Color.White});
+        player = new Player(shipTexture, new Vector2(400,240), bulletTexture);
         // TODO: use this.Content to load your game content here
     }
 

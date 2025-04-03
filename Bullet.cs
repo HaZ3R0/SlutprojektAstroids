@@ -14,10 +14,12 @@ namespace SlutprojektAstroids
             this.texture = texture;
             this.position = position;
             this.velocity = velocity;
+            hitbox.Width = 5;
+            hitbox.Height = 5;
         }
 
         public void Update(){
-            position += velocity * 300 * (1f/60f);
+            position += velocity * 2 * 300 * (1f/60f);
             hitbox.Location = position.ToPoint();
         }
 

@@ -15,13 +15,13 @@ namespace SlutprojektAstroids
         private float rotation;
         private Vector2 velocity = Vector2.Zero;
         private Rectangle hitbox = new Rectangle();
-        
-        private List<Bullet> bullets;
+        private List<Bullet> bullets = new List<Bullet>();
         private Texture2D bulletTexture;
         
-        public Player (Texture2D texture, Vector2 position){
+        public Player (Texture2D texture, Vector2 position, Texture2D bulletTexture){
             this.texture = texture;
             this.position = position;
+            this.bulletTexture = bulletTexture;
             hitbox.Location = position.ToPoint();
             hitbox.Size = texture.Bounds.Size;
         }
@@ -42,8 +42,16 @@ namespace SlutprojektAstroids
                 velocity.Y = (float)Math.Sin(rotation);
             }
 
+            if(kstate.IsKeyDown(Keys.Space)){
+                Shoot();
+            }
+
             position += velocity * 300 * (1f/60f);
             hitbox.Location = position.ToPoint();
+            
+            foreach (var bullet in bullets){
+                bullet.Update();
+            }
         }
        
         public void Draw(SpriteBatch _spriteBatch){
@@ -55,14 +63,16 @@ namespace SlutprojektAstroids
             , new Vector2 (texture.Width /2, texture.Height / 2)
             , SpriteEffects.None
             , 0);
+
+             foreach (var bullet in bullets)
+            {
+                bullet.Draw(_spriteBatch);
+            }
         }
 
         private void Shoot(){
-            KeyboardState kstate = Keyboard.GetState();
-
-            if (kstate.IsKeyDown(Keys.Space)){
+        
                 bullets.Add(new Bullet(bulletTexture, position, velocity));
-            }
         }
     }
 }
