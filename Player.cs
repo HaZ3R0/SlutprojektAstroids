@@ -15,15 +15,21 @@ namespace SlutprojektAstroids
         private float rotation;
         private Vector2 velocity = Vector2.Zero;
         private Rectangle hitbox = new Rectangle();
+        
         private List<Bullet> bullets = new List<Bullet>();
         private Texture2D bulletTexture;
+
+    
+        KeyboardState previousKeyState;
+
+
         
         public Player (Texture2D texture, Vector2 position, Texture2D bulletTexture){
             this.texture = texture;
             this.position = position;
             this.bulletTexture = bulletTexture;
             hitbox.Location = position.ToPoint();
-            hitbox.Size = texture.Bounds.Size;
+            hitbox.Size = (texture.Bounds.Size.ToVector2() / 1.2f).ToPoint();
         }
 
         public void Update(){
@@ -42,7 +48,7 @@ namespace SlutprojektAstroids
                 velocity.Y = (float)Math.Sin(rotation);
             }
 
-            if(kstate.IsKeyDown(Keys.Space)){
+            if(kstate.IsKeyDown(Keys.Space)  && previousKeyState.IsKeyUp(Keys.Space)){
                 Shoot();
             }
 
@@ -52,6 +58,8 @@ namespace SlutprojektAstroids
             foreach (var bullet in bullets){
                 bullet.Update();
             }
+            previousKeyState = kstate;
+
         }
        
         public void Draw(SpriteBatch _spriteBatch){
@@ -71,8 +79,9 @@ namespace SlutprojektAstroids
         }
 
         private void Shoot(){
-        
-                bullets.Add(new Bullet(bulletTexture, position, velocity));
+            Vector2 bulletVelocity = new Vector2(MathF.Cos(rotation), MathF.Sin(rotation));
+            bullets.Add(new Bullet(bulletTexture, position, bulletVelocity));
         }
+        
     }
 }
