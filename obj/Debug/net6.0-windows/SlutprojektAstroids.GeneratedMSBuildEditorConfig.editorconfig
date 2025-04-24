@@ -14,6 +14,6 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = SlutprojektAstroids
-build_property.ProjectDir = C:\webb\SlutprojektAstroids\
+build_property.ProjectDir = C:\webb\SDL3Game\SlutprojektAstroids\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 

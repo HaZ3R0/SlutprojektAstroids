@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "u+Q7vObjGeA=",
+  "dgSpecHash": "c3ldZZgwCZA=",
   "success": true,
-  "projectFilePath": "C:\\webb\\SlutprojektAstroids\\SlutprojektAstroids.csproj",
+  "projectFilePath": "C:\\webb\\SDL3Game\\SlutprojektAstroids\\SlutprojektAstroids.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Admin\\.nuget\\packages\\libuv\\1.9.1\\libuv.1.9.1.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\microsoft.codeanalysis.analyzers\\1.1.0\\microsoft.codeanalysis.analyzers.1.1.0.nupkg.sha512",

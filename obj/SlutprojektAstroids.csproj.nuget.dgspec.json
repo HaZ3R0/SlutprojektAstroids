@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\webb\\SlutprojektAstroids\\SlutprojektAstroids.csproj": {}
+    "C:\\webb\\SDL3Game\\SlutprojektAstroids\\SlutprojektAstroids.csproj": {}
   },
   "projects": {
-    "C:\\webb\\SlutprojektAstroids\\SlutprojektAstroids.csproj": {
+    "C:\\webb\\SDL3Game\\SlutprojektAstroids\\SlutprojektAstroids.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\webb\\SlutprojektAstroids\\SlutprojektAstroids.csproj",
+        "projectUniqueName": "C:\\webb\\SDL3Game\\SlutprojektAstroids\\SlutprojektAstroids.csproj",
         "projectName": "SlutprojektAstroids",
-        "projectPath": "C:\\webb\\SlutprojektAstroids\\SlutprojektAstroids.csproj",
+        "projectPath": "C:\\webb\\SDL3Game\\SlutprojektAstroids\\SlutprojektAstroids.csproj",
         "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "C:\\webb\\SlutprojektAstroids\\obj\\",
+        "outputPath": "C:\\webb\\SDL3Game\\SlutprojektAstroids\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
