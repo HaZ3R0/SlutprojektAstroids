@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SlutprojektAstroids")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1e3bf1e6db03bd8263733099ac4ca298d8344b84")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+dc25b1ea05c8bede6ce34c0665d980a463b8d987")]
 [assembly: System.Reflection.AssemblyProductAttribute("SlutprojektAstroids")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SlutprojektAstroids")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
