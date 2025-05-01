@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <SourceFile>C:/webb/SDL3Game/SlutprojektAstroids/Content/Ship.png</SourceFile>
-  <SourceTime>2025-04-24T12:16:25.4868227+02:00</SourceTime>
-  <DestFile>C:/webb/SDL3Game/SlutprojektAstroids/Content/bin/Windows/Content/Ship.xnb</DestFile>
-  <DestTime>2025-04-24T12:17:34.7935013+02:00</DestTime>
+  <SourceFile>C:/Users/Markus/Documents/GitHub/SlutprojektAstroids/Content/Ship.png</SourceFile>
+  <SourceTime>2025-05-01T11:30:14.3613165+02:00</SourceTime>
+  <DestFile>C:/Users/Markus/Documents/GitHub/SlutprojektAstroids/Content/bin/Windows/Content/Ship.xnb</DestFile>
+  <DestTime>2025-05-01T11:32:17.6412565+02:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2022-07-26T13:44:56+02:00</ImporterTime>
   <Processor>TextureProcessor</Processor>

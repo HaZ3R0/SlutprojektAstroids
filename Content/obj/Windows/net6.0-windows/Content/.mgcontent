@@ -4,7 +4,7 @@
   <Platform>Windows</Platform>
   <Config />
   <SourceFiles>
-    <File>C:/webb/SDL3Game/SlutprojektAstroids/Content/Ship.png</File>
+    <File>C:/Users/Markus/Documents/GitHub/SlutprojektAstroids/Content/Ship.png</File>
   </SourceFiles>
   <DestFiles>
     <File xsi:nil="true" />

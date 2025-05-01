@@ -1,6 +1,8 @@
-﻿using Microsoft.Xna.Framework;
+﻿using System.Collections.Generic;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using SharpDX.MediaFoundation;
 
 namespace SlutprojektAstroids;
 
@@ -11,6 +13,11 @@ public class Game1 : Game
     Texture2D shipTexture;
     Texture2D bulletTexture;
     Player player;
+
+    Texture2D enemyCTexture;
+    List <Circle> enemiesC = new List<Circle>();
+    double spawnTimer = 0;
+    double spawnTInterval = 3;
 
     public Game1()
     {
@@ -31,6 +38,8 @@ public class Game1 : Game
     {
         _spriteBatch = new SpriteBatch(GraphicsDevice);
 
+        enemyCTexture = new Texture2D (GraphicsDevice,1,1);
+        enemyCTexture.SetData(new Color[]{Color.White});
         shipTexture = Content.Load<Texture2D>("Ship");
         bulletTexture = new Texture2D(GraphicsDevice, 1,1);
         bulletTexture.SetData(new Color[]{Color.White});
@@ -45,7 +54,18 @@ public class Game1 : Game
         // TODO: Add your update logic here
         
         player.Update();
+
+        spawnTimer += gameTime.ElapsedGameTime.TotalSeconds;
+
+        if (spawnTimer >= spawnTInterval){
+            enemiesC.Add(new Circle(enemyCTexture));
+            spawnTimer = 0;
+        }
         base.Update(gameTime);
+
+        foreach(var enemyC in enemiesC){
+            enemyC.Update();
+        }
     }
 
     protected override void Draw(GameTime gameTime)
@@ -53,6 +73,10 @@ public class Game1 : Game
         GraphicsDevice.Clear(Color.Black);
         _spriteBatch.Begin();
         player.Draw(_spriteBatch);
+
+        foreach(var enemyC in enemiesC){
+            enemyC.Draw(_spriteBatch);
+        }
         _spriteBatch.End();
 
         // TODO: Add your drawing code here
