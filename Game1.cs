@@ -16,8 +16,12 @@ public class Game1 : Game
 
     Texture2D enemyCTexture;
     List <Circle> enemiesC = new List<Circle>();
+
+    Texture2D enemyTTexture;
+
+    List<Triangel> enemiesT = new List<Triangel>();
     double spawnTimer = 0;
-    double spawnTInterval = 3;
+    double spawnTInterval = 5;
 
     public Game1()
     {
@@ -40,6 +44,8 @@ public class Game1 : Game
 
         enemyCTexture = new Texture2D (GraphicsDevice,1,1);
         enemyCTexture.SetData(new Color[]{Color.White});
+        enemyTTexture = new Texture2D(GraphicsDevice,1,1);
+        enemyTTexture.SetData(new Color[]{Color.White});
         shipTexture = Content.Load<Texture2D>("Ship");
         bulletTexture = new Texture2D(GraphicsDevice, 1,1);
         bulletTexture.SetData(new Color[]{Color.White});
@@ -59,12 +65,17 @@ public class Game1 : Game
 
         if (spawnTimer >= spawnTInterval){
             enemiesC.Add(new Circle(enemyCTexture));
+            enemiesT.Add(new Triangel(enemyTTexture));
             spawnTimer = 0;
         }
         base.Update(gameTime);
 
         foreach(var enemyC in enemiesC){
             enemyC.Update();
+        }
+
+        foreach(var enemyT in enemiesT){
+            enemyT.Update();
         }
     }
 
@@ -76,6 +87,10 @@ public class Game1 : Game
 
         foreach(var enemyC in enemiesC){
             enemyC.Draw(_spriteBatch);
+        }
+
+        foreach( var enemyT in enemiesT){
+            enemyT.Draw(_spriteBatch);
         }
         _spriteBatch.End();
 
