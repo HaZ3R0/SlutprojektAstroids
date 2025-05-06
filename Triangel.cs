@@ -24,6 +24,8 @@ namespace SlutprojektAstroids
         private float centerX;
         private float centerY;
 
+        public Rectangle GetRectangle() => hitbox;
+
         public void Update(){
 
             time += 0.03f;

@@ -25,7 +25,13 @@ namespace SlutprojektAstroids
     
         KeyboardState previousKeyState;
 
+        public Rectangle Hitbox{
+            get => hitbox;
+        }
 
+        public List<Bullet> Bullets{
+            get {return bullets;}
+        }
         
         public Player (Texture2D texture, Vector2 position, Texture2D bulletTexture){
             this.texture = texture;

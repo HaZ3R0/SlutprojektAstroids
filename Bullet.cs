@@ -10,6 +10,10 @@ namespace SlutprojektAstroids
         Rectangle hitbox = new Rectangle();
         Vector2 velocity = Vector2.Zero;
 
+        public Rectangle GetRectangle() => hitbox;
+
+        
+
         public Bullet (Texture2D texture, Vector2 position, Vector2 velocity){
             this.texture = texture;
             this.position = position;

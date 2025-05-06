@@ -20,9 +20,9 @@ public class Game1 : Game
     Texture2D enemyTTexture;
 
     List<Triangel> enemiesT = new List<Triangel>();
+  
     double spawnTimer = 0;
-    double spawnTInterval = 5;
-
+    double spawnTInterval = 2;
     public Game1()
     {
         _graphics = new GraphicsDeviceManager(this);
@@ -77,6 +77,11 @@ public class Game1 : Game
         foreach(var enemyT in enemiesT){
             enemyT.Update();
         }
+
+        PlayerCircleCollision();
+        PlayerTriangelColission();
+        BulletCircleColission();
+        BulletTriangelColossion();
     }
 
     protected override void Draw(GameTime gameTime)
@@ -97,5 +102,44 @@ public class Game1 : Game
         // TODO: Add your drawing code here
 
         base.Draw(gameTime);
+    }
+
+    void PlayerCircleCollision(){
+        foreach (var enemyC in enemiesC){
+            if (player.Hitbox.Intersects(enemyC.GetRectangle())){
+                Exit();
+            }
+        }
+        
+    }
+
+    void PlayerTriangelColission(){
+        foreach (var enemyT in enemiesT){
+            if (player.Hitbox.Intersects(enemyT.GetRectangle())){
+                Exit();
+            }
+        }
+    }
+
+    void BulletCircleColission(){
+        for (int ec = 0; ec < enemiesC.Count; ec++){
+            for (int b = 0; b < player.Bullets.Count; b++){
+                if(enemiesC[ec].GetRectangle().Intersects(player.Bullets[b].GetRectangle())){
+                    player.Bullets.RemoveAt(b);
+                    enemiesC.RemoveAt(ec);
+                }
+            }
+        }
+    }
+
+    void BulletTriangelColossion(){
+        for (int et = 0; et < enemiesT.Count; et++){
+            for (int b = 0; b <player.Bullets.Count; b++){
+                if(enemiesT[et].GetRectangle().Intersects(player.Bullets[b].GetRectangle())){
+                    player.Bullets.RemoveAt(b);
+                    enemiesT.RemoveAt(et);
+                }
+            }
+        }
     }
 }

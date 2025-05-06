@@ -19,7 +19,8 @@ namespace SlutprojektAstroids
         private float time;
         private float initialY;
 
-
+        public Rectangle GetRectangle() => hitbox;
+        
         public void Update(){
             Movement();
 
